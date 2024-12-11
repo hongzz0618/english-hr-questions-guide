@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          {% for page in site.header_pages %}
+          <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </header>
+
+    <main>{{ content }}</main>
+
+    <footer>
+      <p>Author: {{ site.author }}</p>
+      <p>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+
+      <ul>
+        <li><a href="{{ site.social_links.github }}">GitHub</a></li>
+        <li><a href="{{ site.social_links.linkedin }}">LinkedIn</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
